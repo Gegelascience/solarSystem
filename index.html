@@ -1,46 +1,53 @@
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Solar System</title>
-        <script src="./aframe.min.js" ></script>
-        <script src="./planet.js"></script>
-    </head>
-    <body>
-        <a-scene background="color:#000000">
-            <a-assets>
-                <img id="space" src="./textures/space2.jpg"/>
-                <img id="sun" src="./textures/sun.jpg"/>
-                <img id="mercure" src="./textures/mercure.jpg"/>
-                <img id="venus" src="./textures/venus.jpg"/>
-                <img id="earth" src="./textures/earth.jpg"/>
-                <img id="mars" src="./textures/mars.jpg"/>
-                <img id="jupiter" src="./textures/jupiter.jpg"/>
-                <img id="saturne" src="./textures/saturne.jpg"/>
-                <img id="rings" src="./textures/rings.png"/>
-                <img id="uranus" src="./textures/uranus.jpg"/>
-                <img id="neptune" src="./textures/neptune.jpg"/>
-            </a-assets>
-            <a-camera position="0 20 50"></a-camera>
-            <a-sky src="#space"></a-sky>
-            <a-sphere src="#sun" radius="15"></a-sphere>
-            <a-sphere src="#mercure" planet="tRevol:200000;semiAxe:10;angularStart:260;tRotation:3000" radius="2"></a-sphere>
-            <a-ring radius-inner="19.8" radius-outer="20.2" rotation="-90 0 0"></a-ring>
-            <a-sphere src="#venus" planet="tRevol:300000;semiAxe:15angularStart:40;tRotation:4000" radius="2"></a-sphere>
-            <a-ring radius-inner="29.8" radius-outer="30.2" rotation="-90 0 0"></a-ring>
-            <a-sphere src="#earth" planet radius="2"></a-sphere>
-            <a-ring radius-inner="39.8" radius-outer="40.2" rotation="-90 0 0"></a-ring>
-            <a-sphere src="#mars" planet="tRevol:600000;semiAxe:25angularStart:130;tRotation:6000" radius="2" ></a-sphere>
-            <a-ring radius-inner="49.8" radius-outer="50.2" rotation="-90 0 0"></a-ring>
-            <a-sphere src="#jupiter" planet="tRevol:700000;semiAxe:30angularStart:90;tRotation:7000" radius="4" ></a-sphere>
-            <a-ring radius-inner="59.8" radius-outer="60.2" rotation="-90 0 0"></a-ring>
-            <a-sphere src="#saturne" planet="tRevol:800000;semiAxe:35angularStart:220;tRotation:8000" radius="4">
-                <a-circle radius="6" src="#rings" position="0 0 0" rotation="-90 0 0"></a-circle>
-            </a-sphere>
-            <a-ring radius-inner="69.8" radius-outer="70.2" rotation="-90 0 0"></a-ring>
-            <a-sphere src="#uranus" planet="tRevol:900000;semiAxe:40angularStart:200;tRotation:9000" radius="3"></a-sphere>
-            <a-ring radius-inner="79.8" radius-outer="80.2" rotation="-90 0 0"></a-ring>
-            <a-sphere src="#neptune" planet="tRevol:1000000;semiAxe:45angularStart:300;tRotation:10000" radius="3"></a-sphere>
-            <a-ring radius-inner="89.8" radius-outer="90.2" rotation="-90 0 0"></a-ring>
-        </a-scene>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <title>Solar System</title>
+    <script src="./aframe.min.js"></script>
+    <script src="./planet.js"></script>
+</head>
+
+<body>
+    <a-scene background="color:#000000">
+        <a-assets>
+            <img id="space" src="./textures/space2.jpg" />
+            <img id="sun" src="./textures/sun.jpg" />
+            <img id="mercure" src="./textures/mercure.jpg" />
+            <img id="venus" src="./textures/venus.jpg" />
+            <img id="earth" src="./textures/earth.jpg" />
+            <img id="mars" src="./textures/mars.jpg" />
+            <img id="jupiter" src="./textures/jupiter.jpg" />
+            <img id="saturne" src="./textures/saturne.jpg" />
+            <img id="rings" src="./textures/rings.png" />
+            <img id="uranus" src="./textures/uranus.jpg" />
+            <img id="neptune" src="./textures/neptune.jpg" />
+        </a-assets>
+        <a-entity position="0 20 50">
+            <a-camera></a-camera>
+        </a-entity>
+        <a-sky src="#space"></a-sky>
+        <a-sphere src="#sun" radius="15"></a-sphere>
+        <a-sphere src="#mercure" planet="tRevol:200000;semiAxe:10;angularStart:260;tRotation:3000" radius="2">
+        </a-sphere>
+        <a-ring radius-inner="19.8" radius-outer="20.2" rotation="-90 0 0"></a-ring>
+        <a-sphere src="#venus" planet="tRevol:300000;semiAxe:15angularStart:40;tRotation:4000" radius="2"></a-sphere>
+        <a-ring radius-inner="29.8" radius-outer="30.2" rotation="-90 0 0"></a-ring>
+        <a-sphere src="#earth" planet radius="2"></a-sphere>
+        <a-ring radius-inner="39.8" radius-outer="40.2" rotation="-90 0 0"></a-ring>
+        <a-sphere src="#mars" planet="tRevol:600000;semiAxe:25angularStart:130;tRotation:6000" radius="2"></a-sphere>
+        <a-ring radius-inner="49.8" radius-outer="50.2" rotation="-90 0 0"></a-ring>
+        <a-sphere src="#jupiter" planet="tRevol:700000;semiAxe:30angularStart:90;tRotation:7000" radius="4"></a-sphere>
+        <a-ring radius-inner="59.8" radius-outer="60.2" rotation="-90 0 0"></a-ring>
+        <a-sphere src="#saturne" planet="tRevol:800000;semiAxe:35angularStart:220;tRotation:8000" radius="4">
+            <a-circle radius="6" src="#rings" position="0 0 0" rotation="-90 0 0"></a-circle>
+        </a-sphere>
+        <a-ring radius-inner="69.8" radius-outer="70.2" rotation="-90 0 0"></a-ring>
+        <a-sphere src="#uranus" planet="tRevol:900000;semiAxe:40angularStart:200;tRotation:9000" radius="3"></a-sphere>
+        <a-ring radius-inner="79.8" radius-outer="80.2" rotation="-90 0 0"></a-ring>
+        <a-sphere src="#neptune" planet="tRevol:1000000;semiAxe:45angularStart:300;tRotation:10000" radius="3">
+        </a-sphere>
+        <a-ring radius-inner="89.8" radius-outer="90.2" rotation="-90 0 0"></a-ring>
+    </a-scene>
+</body>
+
 </html>
