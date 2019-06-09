@@ -3,8 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>Solar System</title>
-    <script src="./aframe.min.js"></script>
+    <!--<script src="./aframe.min.js"></script>-->
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <script src="./planet.js"></script>
+    <script src="./info-entity.js"></script>
+    <script src="./switch-mode.js"></script>
 </head>
 
 <body>
@@ -22,29 +25,45 @@
             <img id="uranus" src="./textures/uranus.jpg" />
             <img id="neptune" src="./textures/neptune.jpg" />
         </a-assets>
-        <a-entity position="0 20 50">
-            <a-camera></a-camera>
+        <a-entity id="cam" position="0 20 50">
+            <a-entity camera look-controls>
+                <a-entity id="info-planet" position="0 0 -2" scale="2 2 2" text="side:double"></a-entity>
+            </a-entity>
+            <a-entity oculus-go-controls switch-mode>
+                <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 250" position="0 0 -1"
+                    raycaster="showLine: true; objects:.clickable">
+                </a-entity>
+            </a-entity>
         </a-entity>
         <a-sky src="#space"></a-sky>
-        <a-sphere src="#sun" radius="15"></a-sphere>
-        <a-sphere src="#mercure" planet="tRevol:200000;semiAxe:10;angularStart:260;tRotation:3000" radius="2">
+        <a-sphere src="#sun" info-entity="name: Sun" class="clickable" radius="15"></a-sphere>
+        <a-sphere src="#mercure" info-entity="name: Mercure" class="clickable"
+            planet="tRevol:200000;semiAxe:10;angularStart:260;tRotation:3000" radius="2">
         </a-sphere>
         <a-ring radius-inner="19.8" radius-outer="20.2" rotation="-90 0 0"></a-ring>
-        <a-sphere src="#venus" planet="tRevol:300000;semiAxe:15angularStart:40;tRotation:4000" radius="2"></a-sphere>
+        <a-sphere src="#venus" info-entity="name: Venus" class="clickable"
+            planet="tRevol:300000;semiAxe:15;angularStart:40;tRotation:4000" radius="2">
+        </a-sphere>
         <a-ring radius-inner="29.8" radius-outer="30.2" rotation="-90 0 0"></a-ring>
-        <a-sphere src="#earth" planet radius="2"></a-sphere>
+        <a-sphere src="#earth" info-entity="name: Earth" class="clickable" planet radius="2"></a-sphere>
         <a-ring radius-inner="39.8" radius-outer="40.2" rotation="-90 0 0"></a-ring>
-        <a-sphere src="#mars" planet="tRevol:600000;semiAxe:25angularStart:130;tRotation:6000" radius="2"></a-sphere>
+        <a-sphere src="#mars" info-entity="name: Mars" class="clickable"
+            planet="tRevol:600000;semiAxe:25;angularStart:130;tRotation:6000" radius="2">
+        </a-sphere>
         <a-ring radius-inner="49.8" radius-outer="50.2" rotation="-90 0 0"></a-ring>
-        <a-sphere src="#jupiter" planet="tRevol:700000;semiAxe:30angularStart:90;tRotation:7000" radius="4"></a-sphere>
+        <a-sphere src="#jupiter" info-entity="name: Jupiter" class="clickable"
+            planet="tRevol:700000;semiAxe:30;angularStart:90;tRotation:7000" radius="4"></a-sphere>
         <a-ring radius-inner="59.8" radius-outer="60.2" rotation="-90 0 0"></a-ring>
-        <a-sphere src="#saturne" planet="tRevol:800000;semiAxe:35angularStart:220;tRotation:8000" radius="4">
+        <a-sphere src="#saturne" info-entity="name: Saturne" class="clickable"
+            planet="tRevol:800000;semiAxe:35;angularStart:220;tRotation:8000" radius="4">
             <a-circle radius="6" src="#rings" position="0 0 0" rotation="-90 0 0"></a-circle>
         </a-sphere>
         <a-ring radius-inner="69.8" radius-outer="70.2" rotation="-90 0 0"></a-ring>
-        <a-sphere src="#uranus" planet="tRevol:900000;semiAxe:40angularStart:200;tRotation:9000" radius="3"></a-sphere>
+        <a-sphere src="#uranus" info-entity="name: Uranus" class="clickable"
+            planet="tRevol:900000;semiAxe:40;angularStart:200;tRotation:9000" radius="3"></a-sphere>
         <a-ring radius-inner="79.8" radius-outer="80.2" rotation="-90 0 0"></a-ring>
-        <a-sphere src="#neptune" planet="tRevol:1000000;semiAxe:45angularStart:300;tRotation:10000" radius="3">
+        <a-sphere src="#neptune" info-entity="name: Neptune" class="clickable"
+            planet="tRevol:1000000;semiAxe:45;angularStart:300;tRotation:10000" radius="3">
         </a-sphere>
         <a-ring radius-inner="89.8" radius-outer="90.2" rotation="-90 0 0"></a-ring>
     </a-scene>
