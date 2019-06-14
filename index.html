@@ -9,6 +9,7 @@
     <script src="./rotation-planet.js"></script>
     <script src="./info-entity.js"></script>
     <script src="./switch-mode.js"></script>
+    <script src="./teleport.js"></script>
 </head>
 
 <body>
@@ -31,6 +32,20 @@
         <a-entity id="cam" position="0 20 50">
             <a-entity camera look-controls>
                 <a-entity id="info-planet" position="1 0.5 -2" scale="2 2 2" text="side:double"></a-entity>
+                <a-entity id="control-pos" position="0 -0.5 -3">
+                    <a-plane class="clickable" width="0.75" height="0.75" teleport position="-1 0 0">
+                        <a-entity scale="2 2 2" text="value:default position;side:double;color:black;align:center">
+                        </a-entity>
+                    </a-plane>
+                    <a-plane class="clickable" width="0.75" height="0.75" teleport="position:0 16 0" position="0 0 0">
+                        <a-entity scale="2 2 2" text="value:onsun;side:double;color:black;align:center"></a-entity>
+                    </a-plane>
+                    <a-plane class="clickable" width="0.75" height="0.75" teleport="position:40 0 0" position="1 0 0">
+                        <a-entity scale="2 2 2" text="value:on earth trajectory;side:double;color:black;align:center">
+                        </a-entity>
+                    </a-plane>
+                </a-entity>
+
             </a-entity>
             <a-entity oculus-go-controls switch-mode>
                 <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 250" position="0 0 -1"

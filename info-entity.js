@@ -6,7 +6,10 @@ AFRAME.registerComponent('info-entity', {
     init: function () {
         let textInfo = document.getElementById(this.data.textId);
         this.el.addEventListener('mouseenter', (evt) => {
-            textInfo.setAttribute("text", "value", this.data.name)
+            if (textInfo.getAttribute("visible") == true) {
+                textInfo.setAttribute("text", "value", this.data.name)
+            }
+
         })
     }
 })
