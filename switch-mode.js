@@ -7,7 +7,7 @@ AFRAME.registerComponent('switch-mode', {
     init: function () {
         var infoMode = true;
         var posMode = false;
-        this.el.addEventListener('triggerdown', (evt) => {
+        this.el.addEventListener('trackpaddown', (evt) => {
             infoMode = !infoMode;
             var info = document.getElementById(this.data.info);
             info.setAttribute("visible", infoMode);
@@ -16,7 +16,7 @@ AFRAME.registerComponent('switch-mode', {
 
 
         })
-        this.el.addEventListener('trackpaddown', (evt) => {
+        this.el.addEventListener('triggerdown', (evt) => {
             posMode = !posMode;
             var controlPos = document.getElementById(this.data.controls)
             controlPos.setAttribute("visible", posMode);
