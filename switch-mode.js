@@ -6,7 +6,7 @@ AFRAME.registerComponent('switch-mode', {
     },
     init: function () {
         var infoMode = true;
-        var posMode = true;
+        var posMode = false;
         this.el.addEventListener('triggerdown', (evt) => {
             infoMode = !infoMode;
             var info = document.getElementById(this.data.info);
