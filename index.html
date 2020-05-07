@@ -31,7 +31,7 @@
         <a-entity id="cam" position="0 20 50">
             <a-entity camera look-controls>
                 <a-entity id="info-planet" position="1 0.5 -2" scale="2 2 2" text="side:double"></a-entity>
-                <a-entity id="control-pos" position="0 -0.5 -3" visible="false">
+                <a-entity id="control-pos" position="0 -0.5 -3" visible="true">
                     <a-circle class="clickable" radius="0.375" teleport position="-1 0 0">
                         <a-entity scale="2 2 2" text="value:default position;side:double;color:black;align:center">
                         </a-entity>
@@ -46,10 +46,9 @@
                 </a-entity>
 
             </a-entity>
+            <a-entity laser-controls="hand: right"></a-entity>
             <a-entity oculus-go-controls switch-mode>
-                <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 250" position="0 0 -1"
-                    raycaster="showLine: true; objects:.clickable">
-                </a-entity>
+
             </a-entity>
         </a-entity>
 
