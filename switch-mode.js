@@ -7,12 +7,14 @@ AFRAME.registerComponent('switch-mode', {
     init: function () {
         var infoMode = true;
         var posMode = false;
-        this.el.addEventListener('trackpaddown', (evt) => {
+        this.el.addEventListener('click', (evt) => {
             infoMode = !infoMode;
             var info = document.getElementById(this.data.info);
             info.setAttribute("visible", infoMode);
             /*var cursor = document.getElementById(this.data.cursor)
             cursor.setAttribute("raycaster", "showLine", infoMode)*/
+            var panel = document.getElementById(this.data.controls);
+            panel.setAttribute("visible", infoMode);
 
 
         })
@@ -24,6 +26,7 @@ AFRAME.registerComponent('switch-mode', {
             if (!posMode) {
                 for (let index = 0; index < choices.length; index++) {
                     choices[index].setAttribute("class", "")
+
                 }
             } else {
                 for (let index = 0; index < choices.length; index++) {
